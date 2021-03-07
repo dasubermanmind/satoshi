@@ -1546,6 +1546,11 @@
     "schema-utils" "^2.6.5"
     "source-map" "^0.7.3"
 
+"@react-nano/router@^0.9.1":
+  "integrity" "sha512-27z8eocyKRBmAvY5sC5Et7tECF2mSevoCQ5av7VSj3i8zVwNwhRgynT+GZ7R4eljEdqsTYdx1/kORt6ixzEP4g=="
+  "resolved" "https://registry.npmjs.org/@react-nano/router/-/router-0.9.1.tgz"
+  "version" "0.9.1"
+
 "@rollup/plugin-node-resolve@^7.1.1":
   "integrity" "sha512-RxtSL3XmdTAE2byxekYLnx+98kEUOrPHF/KRVjLH+DEIHy6kjIw7YINQzn+NXiH/NTrQLAwYs0GWB+csWygA9Q=="
   "resolved" "https://registry.npmjs.org/@rollup/plugin-node-resolve/-/plugin-node-resolve-7.1.3.tgz"
