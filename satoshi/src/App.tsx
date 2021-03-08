@@ -1,4 +1,4 @@
-import React, {ReactElement} from 'react';
+import React, { ReactElement } from 'react';
 import { Container } from "@material-ui/core";
 import Navbar from "./components/Navbar/Navbar";
 import Information from "./components/Information/Information";
