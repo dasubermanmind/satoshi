@@ -1,30 +1,14 @@
-import React, { ReactElement } from "react";
+import React, { ReactElement, useState } from "react";
 import {
-    AppBar,
     createStyles,
     fade,
-    IconButton,
+    InputBase,
     makeStyles,
-    Theme,
-    Toolbar,
-    Typography
+    Theme
 } from "@material-ui/core";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
-        root: {
-            flexGrow: 1,
-        },
-        menuButton: {
-            marginRight: theme.spacing(2),
-        },
-        title: {
-            flexGrow: 1,
-            display: 'none',
-            [theme.breakpoints.up('sm')]: {
-                display: 'block',
-            },
-        },
         search: {
             position: 'relative',
             borderRadius: theme.shape.borderRadius,
@@ -66,27 +50,27 @@ const useStyles = makeStyles((theme: Theme) =>
     }),
 );
 
-const Navbar = (): ReactElement => {
+
+const Search = (): ReactElement => {
+    const [searchParams, setSearchParams] = useState<string>("");
+    // https://api.coingecko.com/api/v3/coins/:id
     const classes = useStyles();
-    return (
-        <div className={classes.root}>
-            <AppBar>
-                <Toolbar>
-                    <IconButton
-                        edge="start"
-                        className={classes.menuButton}
-                        color="inherit"
-                        aria-label="open drawer"
-                    >
-                        Welcome to Satoshi--icon here
-                    </IconButton>
-                    <Typography className={classes.title} variant="h6" noWrap>
-                    </Typography>
-                    SEARCH GOES HERE
-                </Toolbar>
-            </AppBar>
+    return(
+        <div className={classes.search}>
+            <div className={classes.searchIcon}>
+                Search Icon here
+            </div>
+            <InputBase
+                classes={{
+                    root: classes.inputRoot,
+                    input: classes.inputInput,
+                }}
+                inputProps={{ 'aria-label': 'search' }}
+            />
         </div>
     );
 }
 
-export default Navbar;
+export default Search;
+
+

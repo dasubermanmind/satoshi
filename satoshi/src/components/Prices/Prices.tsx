@@ -1,9 +1,10 @@
 import React, {ReactElement} from "react";
 
+interface PriceProps{
 
+}
+// parse out current market prices
 const Prices = (): ReactElement=> {
-    // GET coing/:id
-    // parse out current market prices
     return (
         <>works</>
     );
