@@ -1,6 +1,6 @@
 
 
-import { Typography } from '@material-ui/core';
+import { Card, CardContent, Typography } from '@material-ui/core';
 import React, { ReactElement } from 'react'
 
 interface coinProps {
@@ -9,13 +9,18 @@ interface coinProps {
 
 
 const MyList = ({ coins }: coinProps): ReactElement => {
-    console.log(coins, 'MYLIST')
     return (
         <>
-            <p>My list</p>
+            <p>Watching: </p>
             {
                 coins && coins.map((datum: any, index: any)=>{
-                  return <Typography key={index}>Selected: {datum.name}</Typography>
+                  return (
+                    <Card>
+                        <CardContent>
+                             <Typography key={index}>Selected: {datum.name}</Typography>
+                        </CardContent>
+                    </Card>
+                  )
                 })
             }
         </>
@@ -23,4 +28,3 @@ const MyList = ({ coins }: coinProps): ReactElement => {
 }
 
 export default MyList;
-
