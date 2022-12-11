@@ -13,8 +13,8 @@ const MyList = ({ coins }: coinProps): ReactElement => {
         <>
             <p>My list</p>
             {
-                coins && coins.map((coin: any, index: any)=>{
-                    <Typography key={index}>Selected: {coin.name}</Typography>
+                coins && coins.map((datum: any, index: any)=>{
+                  return <Typography key={index}>Selected: {datum.name}</Typography>
                 })
             }
         </>

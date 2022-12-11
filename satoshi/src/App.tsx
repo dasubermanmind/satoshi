@@ -19,7 +19,7 @@ function App(): ReactElement {
                 <CoinList coins={coins} updateCoins={setcoinObserver} />
                 </Grid>
 
-                <Grid item xs={4}>
+                <Grid item xs={8}>
                 {
                     coins.length > 0 ? (
                         <MyList coins={coins} />
