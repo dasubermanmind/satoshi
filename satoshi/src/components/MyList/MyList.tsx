@@ -1,7 +1,5 @@
-
-
-import { Button, Card, CardContent, Checkbox, Typography } from '@material-ui/core';
-import React, { ReactElement, useEffect, useState } from 'react'
+import { Button, Card, CardContent, Typography } from '@material-ui/core';
+import React, { ReactElement } from 'react'
 
 interface coinProps {
     coins: any;

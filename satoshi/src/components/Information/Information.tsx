@@ -15,8 +15,9 @@ const Information = (): ReactElement =>{
                 Lets Get Started
             </Typography>
             <Typography variant="h5" align="center" color="textSecondary" component="p">
-                How does Satoshi work? First, we need compare CryptoCurrencies. Select two or three or
-                however many you want, compare them and see what our engine analysis has to say.
+                How does Satoshi work? 
+                Start by watching (following) the currency of your choice. Navigate to your dashboard
+                and there you will have analytics at your fingertips
             </Typography>
         </Container>
     );

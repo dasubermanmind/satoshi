@@ -18,5 +18,6 @@ and be able to see all on chain data OR add wallets to keep track of.
 1. Add a table []
 1. Get on chain data. Chainlink??? []
 1. Improve UI/UX []
+1. Authentication []
 
 

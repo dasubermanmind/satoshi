@@ -82,7 +82,7 @@ const Navbar = (): ReactElement => {
                     </IconButton>
                     <Typography className={classes.title} variant="h6" noWrap>
                     </Typography>
-                    SEARCH GOES HERE
+                    <Typography>Dashboard</Typography>
                 </Toolbar>
             </AppBar>
         </div>

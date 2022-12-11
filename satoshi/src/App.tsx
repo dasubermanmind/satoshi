@@ -1,5 +1,5 @@
-import React, { ReactElement, useEffect, useState } from 'react';
-import {Box, Container, Grid, Typography} from "@material-ui/core";
+import React, { ReactElement, useState } from 'react';
+import { Grid, Typography } from "@material-ui/core";
 import Navbar from "./components/Navbar/Navbar";
 import Information from "./components/Information/Information";
 import CoinList from "./components/CoinList/CoinList";

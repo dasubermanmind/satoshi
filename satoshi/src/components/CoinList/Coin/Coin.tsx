@@ -25,7 +25,7 @@ const useStyles = makeStyles({
     },
 });
 
-export interface CoinProps{
+export interface CoinProps {
     id: string;
     symbol: string;
     name: string;
