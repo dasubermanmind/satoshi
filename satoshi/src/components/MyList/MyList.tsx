@@ -20,7 +20,7 @@ const MyList = ({ coins, deleteCoin }: coinProps): ReactElement => {
                              <Typography key={index}>Selected: {datum.name}</Typography>
                              <Button 
                                 onClick={()=>{deleteCoin(datum)}}
-                                size="small">Delete</Button>
+                                size="small">Remove from watchlist</Button>
                         </CardContent>
                     </Card>
                   )
@@ -31,7 +31,4 @@ const MyList = ({ coins, deleteCoin }: coinProps): ReactElement => {
 }
 
 export default MyList;
-function useForceUpdate() {
-    throw new Error('Function not implemented.');
-}
 
