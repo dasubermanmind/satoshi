@@ -12,7 +12,7 @@ interface coinProps {
 const CoinList = ({ coins, updateCoins }: coinProps): ReactElement => {
     const [{ data, loading, error }] = useAxios(
         {
-            url: 'https://api.coingecko.com/api/v3/coins/list',
+            url: 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=eur&order=market_cap_desc&page=${page}&per_page=10',
             method: 'GET'
         }, { manual: false });
 

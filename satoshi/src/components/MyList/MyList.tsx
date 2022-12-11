@@ -4,15 +4,17 @@ import { Typography } from '@material-ui/core';
 import React, { ReactElement } from 'react'
 
 interface coinProps {
-    coins: string[];
+    coins: any;
 }
 
 const MyList = ({ coins }: coinProps): ReactElement => {
+    console.log(coins, 'MYLIST')
     return (
         <>
+            <p>My list</p>
             {
-                coins.map((coin: any)=>{
-                    coin
+                coins && coins.map((coin: any, index: any)=>{
+                    <Typography key={index}>Selected: {coin.name}</Typography>
                 })
             }
         </>

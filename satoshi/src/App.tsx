@@ -1,5 +1,5 @@
 import React, { ReactElement, useState } from 'react';
-import {Container} from "@material-ui/core";
+import {Box, Container, Grid} from "@material-ui/core";
 import Navbar from "./components/Navbar/Navbar";
 import Information from "./components/Information/Information";
 import CoinList from "./components/CoinList/CoinList";
@@ -11,14 +11,29 @@ function App(): ReactElement {
     console.log(coins)
 
     return (
-        <Container maxWidth="sm">
-            <Navbar />
-            <Information />
-            <CoinList coins={coins} updateCoins={setcoinObserver} />
-            <MyList coins={coins} />
-            {/* <MainRoutes /> */}
-        </Container>
+        <>
+            <Grid container spacing={2}>
+                <Navbar />
+                <Information />
+                <Grid item xs={8}>
+                <CoinList coins={coins} updateCoins={setcoinObserver} />
+                </Grid>
+
+                <Grid item xs={4}>
+                {
+                    coins.length > 0 ? (
+                        <MyList coins={coins} />
+                    ) : (
+                        <></>
+                    )
+                }
+                </Grid>
+            </Grid>
+        </>
+        
     );
 }
 
 export default App;
+
+
