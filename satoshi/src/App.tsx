@@ -8,15 +8,18 @@ import MyList from './components/MyList/MyList';
 
 function App(): ReactElement {
     const [coins, setcoinObserver] = useState([]);
-    console.log(coins)
 
-    // const [checked, setChecked] = useState(false);
+    const deleteCoin = (coin: any)=> {
+        const index = coins.findIndex((object: any) => {
+            return object.id === coin.id;
+          });
 
-    useEffect(()=>{
-        if (coins){
-            console.log('refetch')
+        if (index !== -1) {
+            setcoinObserver([...coins.slice(0, index),
+                ...coins.slice(index + 1, coins.length)
+            ])
         }
-    },[coins])
+    }
 
     return (
         <>
@@ -31,7 +34,7 @@ function App(): ReactElement {
                     <Grid item xs={6} direction='column'>
                     {
                         coins.length > 0 ? (
-                            <MyList coins={coins}/>
+                            <MyList coins={coins} deleteCoin={deleteCoin}/>
                         ) : (
                             <Typography>Not watching any coins</Typography>
                         )

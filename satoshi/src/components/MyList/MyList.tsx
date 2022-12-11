@@ -5,24 +5,10 @@ import React, { ReactElement, useEffect, useState } from 'react'
 
 interface coinProps {
     coins: any;
+    deleteCoin: any;
 }
 
-const MyList = ({ coins }: coinProps): ReactElement => {
-
-    console.log(coins, 'My coins')
-
-    const deleteCoin = (coin: any)=> {
-        const index = coins.findIndex((object: any) => {
-            return object.id === coin.id;
-          });
-
-        console.log(index, 'Index')
-
-        if (index !== -1) {
-            coins.splice(index, 1);
-        }
-    }
-
+const MyList = ({ coins, deleteCoin }: coinProps): ReactElement => {
     return (
         <>
             <p>Watching: </p>
