@@ -51,7 +51,7 @@ const Coin = ({ id, symbol, name, addToListCallback }: CoinProps): ReactElement 
             <CardActions>
                 <Button 
                 onClick={()=>{addToListCallback( name, id )}}
-                size="small">Add to my specialized list to keep track of.</Button>
+                size="small">Watch</Button>
             </CardActions>
         </Card>
     );

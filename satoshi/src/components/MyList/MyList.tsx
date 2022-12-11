@@ -7,6 +7,7 @@ interface coinProps {
     coins: any;
 }
 
+
 const MyList = ({ coins }: coinProps): ReactElement => {
     console.log(coins, 'MYLIST')
     return (

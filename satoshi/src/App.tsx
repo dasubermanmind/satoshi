@@ -1,5 +1,5 @@
 import React, { ReactElement, useState } from 'react';
-import {Box, Container, Grid} from "@material-ui/core";
+import {Box, Container, Grid, Typography} from "@material-ui/core";
 import Navbar from "./components/Navbar/Navbar";
 import Information from "./components/Information/Information";
 import CoinList from "./components/CoinList/CoinList";
@@ -12,19 +12,20 @@ function App(): ReactElement {
 
     return (
         <>
-            <Grid container spacing={2}>
+            <Information />
+            <Grid container>
                 <Navbar />
-                <Information />
-                <Grid item xs={8}>
+                
+                <Grid item xs={6} direction='column'>
                 <CoinList coins={coins} updateCoins={setcoinObserver} />
                 </Grid>
 
-                <Grid item xs={8}>
+                <Grid item xs={6} direction='column'>
                 {
                     coins.length > 0 ? (
                         <MyList coins={coins} />
                     ) : (
-                        <></>
+                        <Typography>Not watching any coins</Typography>
                     )
                 }
                 </Grid>
