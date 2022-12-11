@@ -29,10 +29,16 @@ export interface CoinProps{
     id: string;
     symbol: string;
     name: string;
+    addToListCallback: (id: string, name: string)=>void;
 }
 
-const Coin = ({ id, symbol, name }: CoinProps): ReactElement => {
+const Coin = ({ id, symbol, name, addToListCallback }: CoinProps): ReactElement => {
     const classes = useStyles();
+
+    // const handleClick = (id: string) => {
+    //     console.log('HAndle click was called');
+    // }
+
     return (
         <Card className={classes.root} variant="outlined">
             <CardContent>
@@ -47,7 +53,9 @@ const Coin = ({ id, symbol, name }: CoinProps): ReactElement => {
                 </Typography>
             </CardContent>
             <CardActions>
-                <Button size="small">Learn More</Button>
+                <Button 
+                onClick={()=>{addToListCallback( name, id )}}
+                size="small">Add to my specialized list to keep track of.</Button>
             </CardActions>
         </Card>
     );

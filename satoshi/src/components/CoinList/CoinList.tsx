@@ -1,4 +1,4 @@
-import React, { ReactElement, useEffect } from "react";
+import React, { ReactElement, useEffect, useState } from "react";
 import useAxios from "axios-hooks";
 import { CircularProgress } from "@material-ui/core";
 import Coin from "./Coin/Coin";
@@ -17,6 +17,13 @@ const CoinList = (): ReactElement => {
         }
     },[error]);
 
+    const [coinObserver, setcoinObserver] = useState<any>([{}])
+
+    // Add to the specialized list to keep track of. 
+    const addToListCallback = (id: string, name: string)=> {
+        setcoinObserver([...coinObserver, {id, name}]);
+    }
+
     return (
         <>
             {
@@ -25,7 +32,9 @@ const CoinList = (): ReactElement => {
                         <Coin
                             id={coin.id}
                             symbol={coin.symbol}
-                            name={coin.name} />
+                            name={coin.name}
+                            addToListCallback={addToListCallback}
+                            />
                         ))
             }
         </>
