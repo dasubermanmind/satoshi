@@ -35,12 +35,8 @@ export interface CoinProps{
 const Coin = ({ id, symbol, name, addToListCallback }: CoinProps): ReactElement => {
     const classes = useStyles();
 
-    // const handleClick = (id: string) => {
-    //     console.log('HAndle click was called');
-    // }
-
     return (
-        <Card className={classes.root} variant="outlined">
+        <Card className={classes.root} key={id} variant="outlined">
             <CardContent>
                 <Typography className={classes.title} color="textSecondary" gutterBottom>
                     { name }
