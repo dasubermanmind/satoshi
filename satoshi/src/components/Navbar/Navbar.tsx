@@ -9,6 +9,8 @@ import {
     Toolbar,
     Typography
 } from "@material-ui/core";
+import { NavLink, Route, Routes } from "react-router-dom";
+import Dashboard from "../Dashboard/Dashboard";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -82,9 +84,13 @@ const Navbar = (): ReactElement => {
                     </IconButton>
                     <Typography className={classes.title} variant="h6" noWrap>
                     </Typography>
-                    <Typography>Dashboard</Typography>
+                    <NavLink to="/dashboard">Dashboard</NavLink>
                 </Toolbar>
             </AppBar>
+
+            <Routes>
+            <Route path="/dashboard" element={<Dashboard/>} />
+         </Routes>
         </div>
     );
 }

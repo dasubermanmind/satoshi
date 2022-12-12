@@ -1,14 +1,17 @@
 import React, { ReactElement, useState } from 'react';
-import { Grid, Typography } from "@material-ui/core";
+import { Button, Grid, Typography } from "@material-ui/core";
 import Navbar from "./components/Navbar/Navbar";
 import Information from "./components/Information/Information";
 import CoinList from "./components/CoinList/CoinList";
 import MyList from './components/MyList/MyList';
-
+import { Route, Routes } from 'react-router-dom';
+import Dashboard from './components/Dashboard/Dashboard';
+import { NavLink } from 'react-router-dom';
 
 function App(): ReactElement {
     const [coins, setcoinObserver] = useState([]);
-
+    
+    
     const deleteCoin = (coin: any)=> {
         const index = coins.findIndex((object: any) => {
             return object.id === coin.id;
@@ -26,7 +29,6 @@ function App(): ReactElement {
             <Information />
                 <Grid container>
                     <Navbar />
-                    
                     <Grid item xs={6} direction='column'>
                     <CoinList coins={coins} updateCoins={setcoinObserver} />
                     </Grid>
@@ -39,6 +41,7 @@ function App(): ReactElement {
                             <Typography>Not watching any coins</Typography>
                         )
                     }
+                    
                     </Grid>
                 </Grid>
         </>
