@@ -11,6 +11,7 @@ import {
 } from "@material-ui/core";
 import { NavLink, Route, Routes } from "react-router-dom";
 import Dashboard from "../Dashboard/Dashboard";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -68,7 +69,13 @@ const useStyles = makeStyles((theme: Theme) =>
     }),
 );
 
-const Navbar = (): ReactElement => {
+interface NavProps {
+    id: string[];
+    coins: any[];
+}
+
+const Navbar = ({ id, coins }: NavProps): ReactElement => {
+    console.log(id, 'ID')
     const classes = useStyles();
     return (
         <div className={classes.root}>
@@ -83,13 +90,15 @@ const Navbar = (): ReactElement => {
                         Welcome to Satoshi--icon here
                     </IconButton>
                     <Typography className={classes.title} variant="h6" noWrap>
+                    <Link to="/dashboard">Dashboard</Link>
                     </Typography>
-                    <NavLink to="/dashboard">Dashboard</NavLink>
+                    
                 </Toolbar>
             </AppBar>
 
             <Routes>
-            <Route path="/dashboard" element={<Dashboard/>} />
+            <Route path="/dashboard" element={<Dashboard ids={id} coins={coins} />}>
+            </Route>
          </Routes>
         </div>
     );

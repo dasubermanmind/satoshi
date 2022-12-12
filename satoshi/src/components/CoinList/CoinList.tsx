@@ -22,11 +22,7 @@ const CoinList = ({ coins, updateCoins }: coinProps): ReactElement => {
         }
     },[error]);
 
-    // Add to the specialized list to keep track of. 
-    const addToListCallback = (id: string, name: string)=> {
-        updateCoins([...coins, {id, name}]);
-    }
-
+    
     return (
         <>
             {
@@ -37,7 +33,9 @@ const CoinList = ({ coins, updateCoins }: coinProps): ReactElement => {
                             id={coin.id}
                             symbol={coin.symbol}
                             name={coin.name}
-                            addToListCallback={addToListCallback}
+                            addToListCallback={(id, name)=>{
+                                updateCoins(coin, id)
+                            }}
                             />
                        </Typography>
                         ))

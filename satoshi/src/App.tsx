@@ -10,7 +10,12 @@ import { NavLink } from 'react-router-dom';
 
 function App(): ReactElement {
     const [coins, setcoinObserver] = useState([]);
+    const [ids, setId] = useState([])
     
+    const addCoin = (coin: any, coin_id: any) => {
+        setcoinObserver([...coins, coin])
+        setId([...ids, coin_id]);
+    }
     
     const deleteCoin = (coin: any)=> {
         const index = coins.findIndex((object: any) => {
@@ -24,13 +29,17 @@ function App(): ReactElement {
         }
     }
 
+    console.log(coins, 'COins')
+
+    // bug in passing down coins but overall good progress
+
     return (
         <>
             <Information />
                 <Grid container>
-                    <Navbar />
+                    <Navbar id={ids} coins={coins} />
                     <Grid item xs={6} direction='column'>
-                    <CoinList coins={coins} updateCoins={setcoinObserver} />
+                    <CoinList coins={coins} updateCoins={addCoin} />
                     </Grid>
 
                     <Grid item xs={6} direction='column'>
