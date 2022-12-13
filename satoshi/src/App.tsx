@@ -10,11 +10,9 @@ import { NavLink } from 'react-router-dom';
 
 function App(): ReactElement {
     const [coins, setcoinObserver] = useState([]);
-    const [ids, setId] = useState([])
     
     const addCoin = (coin: any, coin_id: any) => {
         setcoinObserver([...coins, coin])
-        setId([...ids, coin_id]);
     }
     
     const deleteCoin = (coin: any)=> {
@@ -37,7 +35,7 @@ function App(): ReactElement {
         <>
             <Information />
                 <Grid container>
-                    <Navbar id={ids} coins={coins} />
+                    <Navbar coins={coins} />
                     <Grid item xs={6} direction='column'>
                     <CoinList coins={coins} updateCoins={addCoin} />
                     </Grid>

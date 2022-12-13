@@ -70,12 +70,10 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 interface NavProps {
-    id: string[];
     coins: any[];
 }
 
-const Navbar = ({ id, coins }: NavProps): ReactElement => {
-    console.log(id, 'ID')
+const Navbar = ({ coins }: NavProps): ReactElement => {
     const classes = useStyles();
     return (
         <div className={classes.root}>
@@ -97,7 +95,7 @@ const Navbar = ({ id, coins }: NavProps): ReactElement => {
             </AppBar>
 
             <Routes>
-            <Route path="/dashboard" element={<Dashboard ids={id} coins={coins} />}>
+            <Route path="/dashboard" element={<Dashboard coins={coins} />}>
             </Route>
          </Routes>
         </div>

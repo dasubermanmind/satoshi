@@ -3,25 +3,18 @@ import React from 'react'
 import { useParams } from 'react-router-dom';
 
 interface DashboardProps{
-    ids: any[];
     coins: any[];
 }
 
-const Dashboard = ({ids, coins}: DashboardProps)=>{
-    console.log(ids, 'DashboardIDS')
+const Dashboard = ({ coins }: DashboardProps)=>{
     return(
         <>
             {
-                ids && ids.map((id, index)=>{
-                   return <Typography key={index}>THE IDS ARE{id}
-                   {
-                    coins && coins.map((coin, i)=>{
-                        return <Typography key={i}>My coin{coin}</Typography>
-                    })
-                   }
-                   </Typography>
-                })
-            }
+        
+               coins && coins.map((coin, index)=>{
+                return <Typography key={index}>My coin{coin}</Typography>
+                }
+               )}
         </>
     );
 }
