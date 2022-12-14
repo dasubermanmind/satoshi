@@ -11,10 +11,14 @@ const Dashboard = ({ coins }: DashboardProps)=>{
         <>
             {
         
-               coins && coins.map((coin, index)=>{
+        coins.length > 0 ? (
+           coins.map((coin, index)=>{
                 return <Typography key={index}>My coin{coin}</Typography>
-                }
-               )}
+           }) 
+        ) : (
+            <>No dashboard for you</>
+        )
+               }
         </>
     );
 }

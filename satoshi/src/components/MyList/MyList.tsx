@@ -9,20 +9,23 @@ interface coinProps {
 const MyList = ({ coins, deleteCoin }: coinProps): ReactElement => {
     return (
         <>
-            <p>Watching: </p>
             {
-                coins && coins.map((datum: any, index: any)=>{
-                  return (
-                    <Card>
-                        <CardContent>
-                             <Typography key={index}>Selected: {datum.name}</Typography>
-                             <Button 
-                                onClick={()=>{deleteCoin(datum)}}
-                                size="small">Remove from watchlist</Button>
-                        </CardContent>
-                    </Card>
-                  )
-                })
+                coins.length > 0 ? (
+                    coins && coins.map((datum: any, index: any)=>{
+                        return (
+                          <Card>
+                              <CardContent>
+                                   <Typography key={index}>Selected: {datum.name}</Typography>
+                                   <Button 
+                                      onClick={()=>{deleteCoin(datum)}}
+                                      size="small">Remove from watchlist</Button>
+                              </CardContent>
+                          </Card>
+                        )
+                      })
+                )  : (
+                    <></>
+                )
             }
         </>
     );
